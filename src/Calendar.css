@@ -1,0 +1,123 @@
+.calendar-container {
+    font-family: inherit;
+    max-width: 900px;
+    margin-top: 1.5%;
+    margin-left: 13%;
+    padding: 2rem;
+    background-color: rgb(130, 152, 201);
+    color: #000000;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+  }
+  
+  
+  .calendar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+    margin-top: -20px;
+  }
+  
+  .calendar-header button {
+    padding: 0.5rem 1rem;
+    background-color: #f9f9f9;
+    border: none;
+    cursor: pointer;
+  
+  }
+  
+  .calendar-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 0.5rem;
+  }
+  
+  .calendar-day-label {
+    font-weight: bold;
+    text-align: center;
+    
+  }
+  
+  .calendar-day {
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    padding: 0.75rem;
+    height: 60px;
+    position: relative;
+    cursor: pointer;
+    color: black;
+  }
+  
+  .calendar-day.empty {
+    background: transparent;
+    border: none;
+    pointer-events: none;
+  }
+  
+  .calendar-day .day-number {
+    font-weight: bold;
+  }
+  
+  .calendar-day .note-preview {
+    position: absolute;
+    bottom: 5px;
+    right: 5px;
+  }
+  
+  .today {
+    border: 2px solid #80a0e6;
+    color: #7296e3;
+  }
+  
+  
+  .note-popup textarea {
+    width: 90%;
+    margin-bottom: 0.5rem;
+    padding: 0.5rem;
+    background-color: #f9f9f9;
+  }
+  .note-popup button.add-btn {
+    background-color: #a3bcf3;
+    border: none;
+    padding: 10px;
+    width: 95%;
+    cursor: pointer;
+  }
+  .note-popup button:hover {
+    font-weight: bolder;
+  }
+  .note-text {
+
+    margin-top: 0.3rem;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    max-height: 60px;
+    overflow: hidden;
+    color: #000000;
+  }
+  .note-popup {
+    position: fixed;
+    top: 40%;
+    left: 55%;
+    transform: translate(-50%, -30%);
+    background: #f9f9f9;
+    padding: 1rem;
+    width: 300px;
+    z-index: 1000;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+    color: #000000;
+  }
+  
+  .popup-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .close-btn {
+    background: transparent;
+    border: none;
+    font-size: 1.2rem;
+    cursor: pointer;
+  }
+  
+  

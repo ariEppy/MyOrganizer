@@ -1,0 +1,23 @@
+.today-appointment-box {
+
+    background-color: #F6F1DE;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+    margin: 3rem auto;
+    padding: 2rem;
+  }
+  
+  .today-appointment-box h3 {
+    margin-top: 20px;
+    color: #000000;
+    border-bottom: 1px solid #000000;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    font-size:x-large;
+ 
+  }
+  
+  .today-appointment-box p {
+ 
+    color: #000000;
+  }
+  

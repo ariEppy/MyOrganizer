@@ -1,0 +1,126 @@
+.todo-container {
+    max-width: 400px;
+    margin: 3rem auto;
+    padding: 2rem;
+    background-color: #F6F1DE;; /* white window */
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+    color: #000000;
+    text-align: center;
+    
+   
+  }
+  
+  h2 {
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #000000;
+    
+  }
+  
+  .tab-header {
+    display: flex;
+    justify-content: space-between;
+    overflow: hidden;
+  }
+  
+  .tab-header button {
+    flex: 1;
+    padding: 0.75rem 1rem;
+    font-size: 1rem;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    color: #000000;
+    font-family:'Times New Roman', Times, serif;
+  
+  }
+  
+  /* Tab colors */
+  .tab-header .do-tab {
+    background-color: #98ac8d;
+  }
+  
+  .tab-header .done-tab {
+    background-color: rgb(95, 125, 107);
+  }
+  
+  .inactive-tab {
+    
+    box-shadow: inset 0 -2px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  
+  
+  .task-list,
+  .done-list {
+    padding: 1rem;
+    text-align: left;
+    
+  }
+  
+  /* Match tab colors */
+  .task-list {
+    background-color: #98ac8d;
+  }
+  
+  .done-list {
+    background-color:  rgb(95, 125, 107);
+  }
+  
+  .task-list ul,
+  .done-list ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  
+  
+  .task-list li,
+  .done-list li {
+    margin-bottom: 1rem;
+  }
+  
+  .task-list input[type="checkbox"] {
+    accent-color: rgb(88, 151, 124);
+    cursor: pointer;
+  }
+  
+  
+  .task-input {
+    background-color:#98ac8d;
+    padding-bottom: 20px;
+  }
+  .task-input input {
+    background-color:#98ac8d;
+    width: 90%;
+   
+    border: none;
+    border-bottom: 1px solid #000000;
+    outline: none;
+    color: #000000;
+   
+  }
+  .inner {
+    box-shadow: 0 0 20px rgba(55, 55, 55, 0.4);
+  }
+  
+  .clear-button {
+    margin-bottom: 10px;
+    background-color: rgb(110, 147, 124);
+    border: none;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    width: 100%;
+    color: #000;
+  }
+  
+  .clear-button:hover {
+    background-color: rgb(64, 85, 72);
+  }
+  
+  
+  
+  
+  
+  
