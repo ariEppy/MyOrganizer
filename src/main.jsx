@@ -8,6 +8,7 @@ import WeekList from './WeekList.jsx';
 import General from './general.jsx';
 import Calendar from './Calendar.jsx';
 import TodayAppointment from './TodayAppointment';
+import Goals from './Goals.jsx';
 
 function MainApp() {
   const [notes, setNotes] = useState({});
@@ -21,6 +22,7 @@ function MainApp() {
 
   return (
     <Router>
+       <Router basename="/MyOrganizer"></Router>
       <div style={{ display: 'flex' }}>
         <SideMenu />
         <div style={{ marginLeft: '250px', flex: 1 }}>
@@ -48,6 +50,7 @@ function MainApp() {
             <Route path="/week" element={<WeekList />} />
             <Route path="/general" element={<General />} />
             <Route path="/calendar" element={<Calendar />} />
+            <Route path="/goals" element={<Goals />} />
           </Routes>
         </div>
       </div>

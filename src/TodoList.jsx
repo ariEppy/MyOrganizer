@@ -46,15 +46,28 @@ useEffect(() => {
         task.id === taskId ? { ...task, completed: true } : task
       )
     );
-
+  
     setTimeout(() => {
       const completedTask = tasks.find((task) => task.id === taskId);
       if (completedTask) {
+        // ⬇️ Update goals in localStorage if task text matches
+        const storedGoals = JSON.parse(localStorage.getItem("goals")) || [];
+        const matchingIndex = storedGoals.findIndex(
+          (goal) => goal.name.toLowerCase() === completedTask.text.toLowerCase()
+        );
+        if (matchingIndex !== -1) {
+          storedGoals[matchingIndex].count += 1;
+          storedGoals[matchingIndex].logs.unshift(new Date().toISOString().slice(0, 10));
+          localStorage.setItem("goals", JSON.stringify(storedGoals));
+        }
+  
+        // ⬇️ Move task to done
         setDoneTasks([...doneTasks, completedTask]);
         setTasks(tasks.filter((task) => task.id !== taskId));
       }
     }, 1000);
   };
+  
 
   const handleTabSwitch = (tab) => {
     setActiveTab(tab);
@@ -108,13 +121,7 @@ useEffect(() => {
       </label>
       <button
         onClick={() => deleteTask(task.id)}
-        style={{
-          marginLeft: "10px",
-          background: "transparent",
-          border: "none",
-          color: "#000",
-          cursor: "pointer",
-        }}
+       
         aria-label="Delete task"
       >
         ✕

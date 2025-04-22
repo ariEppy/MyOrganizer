@@ -17,6 +17,9 @@ const SideMenu = () => {
         <li className={location.pathname === '/calendar' ? 'active' : ''}>
           <Link to="/calendar">Calendar</Link>
         </li>
+        <li className={location.pathname === '/general' ? 'active' : ''}>
+          <Link to="/general">Notes</Link>
+        </li>
         <li className={location.pathname === '/goals' ? 'active' : ''}>
           <Link to="/goals">Goals</Link>
         </li>

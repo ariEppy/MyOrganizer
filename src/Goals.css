@@ -1,0 +1,77 @@
+.goals-container {
+    max-width: 400px;
+    margin: 3rem auto;
+    padding: 2rem;
+    background-color: #F6F1DE;; /* white window */
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+    color: #000000;
+    text-align: center;
+  }
+  .goals-green {
+    background-color: #98ac8d;
+    padding: 20px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+  }
+  
+  
+  .goal-input {
+    background-color:#98ac8d;
+    padding-bottom: 10px;
+    padding-top: 10px;
+  }
+  .goal-input input {
+    background-color:#98ac8d;
+    width: 90%;  
+    border: none;
+    border-bottom: 1px solid #000000;
+    outline: none;
+    color: #000000;
+   
+  }
+  
+  .goal-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 15px;
+  }
+
+  
+  .goal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+    
+  .goal-buttons button {
+    margin-left: 10px;
+    padding: 4px 10px;
+    background-color: #98ac8d;
+    border: none;
+    cursor: pointer;
+  
+    color: rgb(91, 91, 91);
+}
+
+.goal-buttons button:hover {
+  color: rgb(0, 0, 0);
+}
+
+  
+.log-list {
+    margin-top: 5px;
+    text-align: left;
+    padding-left: 0px;
+  
+    list-style-type: square;
+    list-style-position: inside; /* puts the square inside the text block */
+  }
+  .log-list  {
+    padding: 10px;
+    background-color: rgb(95, 125, 107);
+    box-shadow: 0 0 10px rgba(98, 98, 98, 0.4);
+  }
+
+  
+  

@@ -39,15 +39,28 @@ const WeekList = () => {
         task.id === taskId ? { ...task, completed: true } : task
       )
     );
-
+  
     setTimeout(() => {
       const completedTask = weekTasks.find((task) => task.id === taskId);
       if (completedTask) {
+        // ✅ Update goal if task name matches a goal name
+        const storedGoals = JSON.parse(localStorage.getItem("goals")) || [];
+        const matchingIndex = storedGoals.findIndex(
+          (goal) => goal.name.toLowerCase() === completedTask.text.toLowerCase()
+        );
+        if (matchingIndex !== -1) {
+          storedGoals[matchingIndex].count += 1;
+          storedGoals[matchingIndex].logs.unshift(new Date().toISOString().slice(0, 10));
+          localStorage.setItem("goals", JSON.stringify(storedGoals));
+        }
+  
+        // ✅ Move to done
         setWeekDoneTasks([...weekDoneTasks, completedTask]);
         setWeekTasks(weekTasks.filter((task) => task.id !== taskId));
       }
     }, 1000);
   };
+  
 
   const handleTabSwitch = (tab) => {
     setActiveTab(tab);
@@ -100,13 +113,7 @@ const WeekList = () => {
                     </label>
                     <button
                       onClick={() => deleteWeekTask(task.id)}
-                      style={{
-                        marginLeft: "10px",
-                        background: "transparent",
-                        border: "none",
-                        color: "#000",
-                        cursor: "pointer",
-                      }}
+                      
                       aria-label="Delete task"
                     >
                       ✕

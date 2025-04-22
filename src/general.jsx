@@ -42,13 +42,7 @@ const GeneralNotes = () => {
                 <span>{n.text}</span>
                 <button
                   onClick={() => deleteNote(n.id)}
-                  style={{
-                    marginLeft: "10px",
-                    background: "transparent",
-                    border: "none",
-                    color: "#000",
-                    cursor: "pointer",
-                  }}
+                  
                   aria-label="Delete note"
                 >
                   ✕

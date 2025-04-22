@@ -1,26 +1,27 @@
 .calendar-container {
     font-family: inherit;
     max-width: 900px;
-    margin-top: 1.5%;
+    margin-top: .5%;
     margin-left: 13%;
     padding: 2rem;
-    background-color: rgb(130, 152, 201);
+    background-color: #F6F1DE;
     color: #000000;
     box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
   }
   
-  
+
   .calendar-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin-bottom: 1rem;
     margin-top: -20px;
+    border-bottom: 1px solid #000000;
   }
   
   .calendar-header button {
     padding: 0.5rem 1rem;
-    background-color: #f9f9f9;
+    background-color: #F6F1DE;
     border: none;
     cursor: pointer;
   
@@ -30,17 +31,20 @@
     display: grid;
     grid-template-columns: repeat(7, 1fr);
     gap: 0.5rem;
+    background-color: #98ac8d;
+    padding: 20px;
+    margin-top: 20px;
   }
   
   .calendar-day-label {
-    font-weight: bold;
+  
     text-align: center;
     
   }
   
   .calendar-day {
-    background-color: #f9f9f9;
-    border: 1px solid #ddd;
+    background-color: #98ac8d;
+    border: 1px solid rgb(95, 125, 107);
     padding: 0.75rem;
     height: 60px;
     position: relative;
@@ -65,34 +69,46 @@
   }
   
   .today {
-    border: 2px solid #80a0e6;
-    color: #7296e3;
+    background-color:  rgb(95, 125, 107);
+    color: black;
   }
   
-  
+  .popup-header button {
+    margin-left: 10px;
+    padding: 4px 10px;
+    border: none;
+    cursor: pointer;
+    color: rgb(91, 91, 91);
+  }
   .note-popup textarea {
     width: 90%;
     margin-bottom: 0.5rem;
     padding: 0.5rem;
-    background-color: #f9f9f9;
+    background-color: #F6F1DE;
   }
   .note-popup button.add-btn {
-    background-color: #a3bcf3;
-    border: none;
-    padding: 10px;
     width: 95%;
     cursor: pointer;
+    margin-bottom: 10px;
+    background-color: #F6F1DE;
+    border: 1px solid rgb(127, 127, 127);
+    padding: 0.5rem 1rem;
+    color: rgb(57, 57, 57);
   }
   .note-popup button:hover {
-    font-weight: bolder;
+    color: #000000;
   }
+  textarea:focus, textarea:active {
+    outline: none; 
+    border: 1px solid #000000; /* Keep the border thin */
+    border-radius: 0; /* Remove rounding */
+  }
+  
   .note-text {
-
-    margin-top: 0.3rem;
     white-space: pre-wrap;
     word-wrap: break-word;
-    max-height: 60px;
-    overflow: hidden;
+    max-height: 50px;
+    overflow:auto;
     color: #000000;
   }
   .note-popup {
@@ -100,7 +116,7 @@
     top: 40%;
     left: 55%;
     transform: translate(-50%, -30%);
-    background: #f9f9f9;
+    background: #F6F1DE;
     padding: 1rem;
     width: 300px;
     z-index: 1000;

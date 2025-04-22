@@ -82,7 +82,7 @@
   }
   
   .task-list input[type="checkbox"] {
-    accent-color: rgb(88, 151, 124);
+    accent-color: #98ac8d;
     cursor: pointer;
   }
   
@@ -105,19 +105,32 @@
     box-shadow: 0 0 20px rgba(55, 55, 55, 0.4);
   }
   
+ 
   .clear-button {
     margin-bottom: 10px;
-    background-color: rgb(110, 147, 124);
-    border: none;
+    background-color: rgb(95, 125, 107);
+    border: 1px solid rgb(0, 0, 0);
     padding: 0.5rem 1rem;
     cursor: pointer;
     width: 100%;
-    color: #000;
+    color: rgb(57, 57, 57);
   }
   
   .clear-button:hover {
-    background-color: rgb(64, 85, 72);
+    color: black;
   }
+  .task-list button{
+    margin-left: 10px;
+      padding: 4px 10px;
+      background-color: #98ac8d;
+      border: none;
+      cursor: pointer;
+      color: rgb(91, 91, 91);
+  }
+  .task-list button:hover {
+    color: rgb(0, 0, 0);
+  }
+  
   
   
   

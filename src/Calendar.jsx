@@ -100,7 +100,7 @@ useEffect(() => {
     <div className="calendar-container">
       <div className="calendar-header">
         <button onClick={handlePrevMonth}>←</button>
-        <h2>
+        <h2 style={{borderBottom: 'none' }}>
           {currentDate.toLocaleString('default', { month: 'long' })} {year}
         </h2>
         <button onClick={handleNextMonth}>→</button>
@@ -141,7 +141,7 @@ useEffect(() => {
       {selectedDate && (
   <div className="note-popup">
     <div className="popup-header">
-      <h4>Reminder</h4>
+      <h4>Set Reminder-</h4>
       <button className="close-btn" onClick={() => setSelectedDate(null)}>×</button>
     </div>
     <textarea
