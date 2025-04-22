@@ -21,8 +21,8 @@ function MainApp() {
   }, []);
 
   return (
-    <Router>
-       <Router basename="/MyOrganizer"></Router>
+  
+       <Router basename="/MyOrganizer">
       <div style={{ display: 'flex' }}>
         <SideMenu />
         <div style={{ marginLeft: '250px', flex: 1 }}>
