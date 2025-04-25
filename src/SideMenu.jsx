@@ -1,4 +1,4 @@
-// src/components/SideMenu.jsx
+
 import React from 'react';
 import './SideMenu.css';
 
@@ -23,7 +23,7 @@ const SideMenu = () => {
         <li className={location.pathname === '/goals' ? 'active' : ''}>
           <Link to="/goals">Goals</Link>
         </li>
-        {/* Add more as needed */}
+      
       </ul>
     </div>
   );

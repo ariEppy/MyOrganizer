@@ -21,31 +21,27 @@ function MainApp() {
   }, []);
 
   return (
-  
-       <Router basename="/MyOrganizer">
-      <div style={{ display: 'flex' }}>
+    <Router basename="/MyOrganizer">
+      <div className="main-container">
         <SideMenu />
-        <div style={{ marginLeft: '250px', flex: 1 }}>
+        <div className="main-content">
           <Routes>
-            {/* 🏠 Homepage shows both Today's List and Week's List */}
             <Route
               path="/"
               element={
-                <div style={{ display: 'flex', gap: '2rem', paddingRight: '2rem', marginLeft: '5%' }}>
-                  <div style={{ flex: 1 }}>
+                <div className="dashboard">
+                  <div className="dashboard-item">
                     <TodoList />
                   </div>
-                  <div style={{ flex: 1 }}>
+                  <div className="dashboard-item">
                     <WeekList />
                   </div>
-                  <div  style={{ flex: 1 }}>
+                  <div className="dashboard-item">
                     <TodayAppointment notes={notes} />
                   </div>
                 </div>
               }
             />
-
-            {/* Optional: individual pages */}
             <Route path="/today" element={<TodoList />} />
             <Route path="/week" element={<WeekList />} />
             <Route path="/general" element={<General />} />

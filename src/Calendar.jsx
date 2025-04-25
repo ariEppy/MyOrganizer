@@ -9,27 +9,26 @@ const Calendar = () => {
   const [notes, setNotes] = useState({});
   const [selectedDate, setSelectedDate] = useState(null);
   const [noteInput, setNoteInput] = useState('');
-  const [loaded, setLoaded] = useState(false); // NEW
+  const [loaded, setLoaded] = useState(false); 
 
 
-
-
-  // Save notes to localStorage when they change
+  // Save my notes to the localStorage when notes/currentdate/loaded changes/page starts/renders
   useEffect(() => {
+    //if loaded = true then set the key: calendar notes with notes and currentdate
     if (loaded) {
-      localStorage.setItem(
-        'calendar-notes',
+      localStorage.setItem('calendar-notes',
         JSON.stringify({ notes, currentDate })
       );
     }
   }, [notes, currentDate, loaded]);
   
   
-// Load tasks from localStorage on mount
+// Load tasks from localStorage when the page starts/rerenders
 useEffect(() => {
     const saved = JSON.parse(localStorage.getItem('calendar-notes'));
     if (saved) {
-      if (saved.notes) setNotes(saved.notes);
+      if (saved.notes) 
+        setNotes(saved.notes);
       if (saved.currentDate) {
         const parsedDate = new Date(saved.currentDate);
         if (!isNaN(parsedDate)) {
@@ -40,6 +39,7 @@ useEffect(() => {
     setLoaded(true);
   }, []);
   
+  //when the user clicks on a day
   const handleDayClick = (day) => {
     const dateKey = formatDateKey(currentDate.getFullYear(), currentDate.getMonth(), day);
     if (selectedDate === dateKey) {
@@ -52,11 +52,11 @@ useEffect(() => {
   };
   
   
-
+  //this gets the amount of days in a certain month/year
   const getDaysInMonth = (year, month) => {
     return new Date(year, month + 1, 0).getDate();
   };
-
+  //arrows to move forward or back a month
   const handlePrevMonth = () => {
     setCurrentDate(new Date(currentDate.getFullYear(), currentDate.getMonth() - 1, 1));
   };
@@ -65,9 +65,10 @@ useEffect(() => {
     setCurrentDate(new Date(currentDate.getFullYear(), currentDate.getMonth() + 1, 1));
   };
 
- 
+  //when the user clicks add note/enter to write on the calendar
   const handleNoteSave = () => {
-    if (!selectedDate) return;
+    if (!selectedDate) 
+      return;
   
     setNotes(prevNotes => ({
       ...prevNotes,
@@ -78,7 +79,7 @@ useEffect(() => {
     setNoteInput('');
   };
   
-
+  //format the date for saving to local storage
   const formatDateKey = (year, month, day) => {
     return `${year}-${String(month + 1).padStart(2, '0')}-${String(day).padStart(2, '0')}`;
   };
@@ -86,8 +87,9 @@ useEffect(() => {
   const year = currentDate.getFullYear();
   const month = currentDate.getMonth();
   const daysInMonth = getDaysInMonth(year, month);
-  const firstDayIndex = new Date(year, month, 1).getDay(); // 0 (Sun) to 6 (Sat)
+  const firstDayIndex = new Date(year, month, 1).getDay(); 
 
+  //checks which day is today (so that we can highlight it)
   const isToday = (day) => {
     return (
       day === today.getDate() &&
@@ -126,12 +128,11 @@ useEffect(() => {
             >
               <div className="day-number">{day}</div>
               {notes[dateKey] && (
-  <div className="note-text">
-    {notes[dateKey].length > 50
-      ? notes[dateKey].slice(0, 50) + '...'
-      : notes[dateKey]}
-  </div>
-)}
+              <div className="note-text">
+             {notes[dateKey]}
+             </div>
+            )}
+
 
             </div>
           );

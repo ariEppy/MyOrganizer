@@ -43,7 +43,7 @@ const WeekList = () => {
     setTimeout(() => {
       const completedTask = weekTasks.find((task) => task.id === taskId);
       if (completedTask) {
-        // ✅ Update goal if task name matches a goal name
+        
         const storedGoals = JSON.parse(localStorage.getItem("goals")) || [];
         const matchingIndex = storedGoals.findIndex(
           (goal) => goal.name.toLowerCase() === completedTask.text.toLowerCase()
@@ -53,8 +53,7 @@ const WeekList = () => {
           storedGoals[matchingIndex].logs.unshift(new Date().toISOString().slice(0, 10));
           localStorage.setItem("goals", JSON.stringify(storedGoals));
         }
-  
-        // ✅ Move to done
+ 
         setWeekDoneTasks([...weekDoneTasks, completedTask]);
         setWeekTasks(weekTasks.filter((task) => task.id !== taskId));
       }
@@ -62,9 +61,6 @@ const WeekList = () => {
   };
   
 
-  const handleTabSwitch = (tab) => {
-    setActiveTab(tab);
-  };
 
   const deleteWeekTask = (taskId) => {
     setWeekTasks(weekTasks.filter((task) => task.id !== taskId));
@@ -100,16 +96,16 @@ const WeekList = () => {
             <div className="task-list">
               <ul>
                 {weekTasks.map((task) => (
-                  <li key={task.id} style={{ display: "flex", alignItems: "center", justifyContent: "space-between" }}>
-                    <label style={{ display: "flex", alignItems: "center", cursor: "pointer", flex: 1 }}>
+                  <li key={task.id} >
+                    <label >
                       <input
                         id={`task-${task.id}`}
                         type="checkbox"
                         checked={task.completed}
                         onChange={() => handleCheckboxChange(task.id)}
-                        style={{ marginRight: "10px" }}
+                        
                       />
-                      <span htmlFor={`task-${task.id}`}>{task.text}</span>
+                      <span>{task.text}</span>
                     </label>
                     <button
                       onClick={() => deleteWeekTask(task.id)}
@@ -142,8 +138,8 @@ const WeekList = () => {
           <div className="done-list">
             <ul>
               {weekDoneTasks.map((task) => (
-                <li key={task.id} style={{ display: "flex", alignItems: "center" }}>
-                  <span style={{ marginRight: "8px", color: "black" }}>✓</span>
+                <li key={task.id} >
+                  <span >✓</span>
                   <span>
                     {task.text}
                   </span>

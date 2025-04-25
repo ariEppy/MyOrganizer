@@ -1,67 +1,81 @@
 .side-menu {
-    width: 250px;
-    height: 100vh; /* full screen height */
-    background-color: #F6F1DE;
-    padding: 10px;
-    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
-    font-family: inherit;
-    color: #000000;
-    position: fixed;
-    top: 0;
-    left: 0;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly; /* 💡 distribute evenly */
-   
 
-  }
-  .side-menu {
-    
-    border-right: 1px solid #000000;
-  }
-  
-  
-  .side-menu ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    font-size: 23px;
-    font-weight: bold;
-    color: rgb(126, 126, 126);
-  }
-  
-  .side-menu li {
-    cursor: pointer;
-    text-align: left;
-    border-bottom: 1px solid #000000;
-    padding-bottom: 0.5rem;
+  width: 15%;
+  min-width: 13%; 
+  height: 100vh;
+  background-color: #F6F1DE;
+  padding: 0.625rem; /* 10px */
+  box-shadow: 0.125rem 0 0.625rem rgba(0, 0, 0, 0.1); /* 2px 0 10px */
+  font-family: inherit;
+  color: #000000;
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  border-right: 1px solid #000000;
+}
 
-  }
-  
- 
-  .side-menu a {
-    text-decoration: none;
-    color: inherit;
-    display: block;
-    height: 100%;
-    width: 100%;
-  }
+.side-menu ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  font-size: 1.4375rem; /* 23px */
+  font-weight: bold;
+  color: rgb(126, 126, 126);
+}
+
+.side-menu li {
+  cursor: pointer;
+  text-align: left;
+  border-bottom: 1px solid #000000;
+  padding-bottom: 0.5rem;
+}
+
+.side-menu a {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+  height: 100%;
+  width: 100%;
+}
 
 .side-menu li:hover,
 .side-menu li.focus,
 .side-menu li.active {
-    border-bottom: 1px solid #000000;
-    color: black;
-
+  border-bottom: 1px solid #000000;
+  color: black;
 }
 
+/* Mobile view */
+@media (max-width: 37.5rem) { /* 600px */
+  .side-menu {
+    width: 100%;
+    height:auto;
+    position:absolute;
+    flex-direction: row;
+    padding-bottom: 3%;
+    padding-top: 3%;
+    
+    box-shadow: 0 0.125rem 0.625rem rgba(0, 0, 0, 0.1); 
+  }
 
-  
- 
-  
-  
-  
+  .side-menu ul {
+    flex-direction: row;
+    justify-content: space-around;
+    font-size: 1rem;
+    
+  }
+
+  .side-menu li {
+    border-bottom: none;
+    padding-bottom: 0;
+    padding-right: 20px;
+    padding-left: 20px;
+  }
+}

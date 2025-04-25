@@ -6,7 +6,7 @@ const TodoList = () => {
   const [tasks, setTasks] = useState([]);
   const [doneTasks, setDoneTasks] = useState([]);
   const [activeTab, setActiveTab] = useState('do');
-  const [loaded, setLoaded] = useState(false); // NEW
+  const [loaded, setLoaded] = useState(false); 
   
  // Load tasks from localStorage on mount
  useEffect(() => {
@@ -15,7 +15,7 @@ const TodoList = () => {
     setTasks(stored.tasks || []);
     setDoneTasks(stored.doneTasks || []);
   }
-  setLoaded(true); // ✅ Mark that we've loaded
+  setLoaded(true);
 }, []);
 
 
@@ -50,7 +50,6 @@ useEffect(() => {
     setTimeout(() => {
       const completedTask = tasks.find((task) => task.id === taskId);
       if (completedTask) {
-        // ⬇️ Update goals in localStorage if task text matches
         const storedGoals = JSON.parse(localStorage.getItem("goals")) || [];
         const matchingIndex = storedGoals.findIndex(
           (goal) => goal.name.toLowerCase() === completedTask.text.toLowerCase()
@@ -61,17 +60,12 @@ useEffect(() => {
           localStorage.setItem("goals", JSON.stringify(storedGoals));
         }
   
-        // ⬇️ Move task to done
         setDoneTasks([...doneTasks, completedTask]);
         setTasks(tasks.filter((task) => task.id !== taskId));
       }
     }, 1000);
   };
   
-
-  const handleTabSwitch = (tab) => {
-    setActiveTab(tab);
-  };
 
   const deleteTask = (taskId) => {
     setTasks(tasks.filter((task) => task.id !== taskId));
@@ -108,17 +102,18 @@ useEffect(() => {
           <div className="task-list">
           <ul>
   {tasks.map((task) => (
-    <li key={task.id} style={{ display: "flex", alignItems: "center", justifyContent: "space-between" }}>
-      <label style={{ display: "flex", alignItems: "center", cursor: "pointer", flex: 1 }}>
-        <input
-          id={`task-${task.id}`}
-          type="checkbox"
-          checked={task.completed}
-          onChange={() => handleCheckboxChange(task.id)}
-          style={{ marginRight: "10px" }}
-        />
-        <span htmlFor={`task-${task.id}`}>{task.text}</span>
-      </label>
+    <li key={task.id} >
+    <label >
+  <input
+    id={`task-${task.id}`}
+    type="checkbox"
+    checked={task.completed}
+    onChange={() => handleCheckboxChange(task.id)}
+    
+  />
+  <span>{task.text}</span>
+</label>
+
       <button
         onClick={() => deleteTask(task.id)}
        
@@ -151,8 +146,8 @@ useEffect(() => {
   <div className="done-list">
     <ul>
       {doneTasks.map((task) => (
-        <li key={task.id} style={{ display: "flex", alignItems: "center" }}>
-          <span style={{ marginRight: "8px", color: "black" }}>✓</span>
+        <li key={task.id} >
+          <span >✓</span>
           <span>
             {task.text}
           </span>

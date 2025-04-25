@@ -1,23 +1,45 @@
 .today-appointment-box {
+  background-color: #F6F1DE;
+  box-shadow: 0 0 1.25rem rgba(0, 0, 0, 0.4); /* 20px */
+  margin: 3rem auto;
+  padding: 2rem;
+  word-wrap: break-word;
+  overflow-wrap: break-word; 
+  word-break: break-word;
+}
 
-    background-color: #F6F1DE;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
-    margin: 3rem auto;
-    padding: 2rem;
+.today-appointment-box h3 {
+  margin-top: 1.25rem; /* 20px */
+  margin-bottom: 1.25rem; /* 20px */
+  padding-bottom: 0.625rem; /* 10px */
+  color: #000000;
+  border-bottom: 1px solid #000000;
+  font-size: 1.5rem;
+}
+
+.today-appointment-box p {
+  color: #000000;
+  word-wrap: break-word;
+  overflow-wrap: break-word; 
+  word-break: break-word; 
+}
+
+/* Mobile view */
+@media (max-width: 37.5rem) { /* 600px */
+  .today-appointment-box {
+    width: 90%;
+    margin: 2rem auto;
+    padding: 1rem;
   }
-  
+
   .today-appointment-box h3 {
-    margin-top: 20px;
-    color: #000000;
-    border-bottom: 1px solid #000000;
-    margin-bottom: 20px;
-    padding-bottom: 10px;
-    font-size:x-large;
- 
+    font-size: 1.25rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
   }
-  
+
   .today-appointment-box p {
- 
-    color: #000000;
+    font-size: 1rem;
   }
-  
+}

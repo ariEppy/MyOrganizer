@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import './TodoList.css'; // Reuse existing styles or create a new one if needed
+import './TodoList.css'; 
 
 const GeneralNotes = () => {
   const [note, setNote] = useState('');
@@ -38,11 +38,10 @@ const GeneralNotes = () => {
         <div className="task-list">
           <ul>
             {notes.map((n) => (
-              <li key={n.id} style={{ display: "flex", justifyContent: "space-between" }}>
+              <li key={n.id} >
                 <span>{n.text}</span>
                 <button
-                  onClick={() => deleteNote(n.id)}
-                  
+                  onClick={() => deleteNote(n.id)}           
                   aria-label="Delete note"
                 >
                   ✕

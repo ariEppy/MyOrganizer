@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import './Goals.css'; // Create or update this file like your other pages
+import './Goals.css'; 
 
 const Goals = () => {
   const [goalName, setGoalName] = useState('');
@@ -40,6 +40,7 @@ const Goals = () => {
     updatedGoals[index].logs.unshift(new Date().toISOString().slice(0, 10));
     setGoals(updatedGoals);
   };
+
   const toggleLogVisibility = (index) => {
     setExpandedGoals((prev) => ({
       ...prev,
@@ -51,7 +52,7 @@ const Goals = () => {
     const updatedGoals = goals.filter((_, i) => i !== index);
     setGoals(updatedGoals);
   
-    // Also remove its expanded state
+    
     setExpandedGoals((prev) => {
       const updated = { ...prev };
       delete updated[index];
@@ -71,8 +72,8 @@ const Goals = () => {
   onChange={(e) => setGoalName(e.target.value)}
   onKeyDown={(e) => {
     if (e.key === "Enter" && goalName.trim() !== "") {
-      addGoal(); // your goal-adding function
-      setGoalName(""); // clear input
+      addGoal(); 
+      setGoalName(""); 
     }
   }}
   placeholder="Add Goal"
