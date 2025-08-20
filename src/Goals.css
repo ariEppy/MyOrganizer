@@ -1,5 +1,5 @@
 .goals-container {
-  max-width: 25rem; /* 400px */
+  max-width: 60rem; /* 400px */
   margin: 3rem auto;
   padding: 2rem;
   background-color: #F6F1DE;
@@ -136,3 +136,7 @@
   }
   
 }
+h2 {
+ text-align: center;
+}
+

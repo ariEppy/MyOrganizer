@@ -76,6 +76,7 @@
   max-height: 2.5rem;
   overflow: auto;
   color: #000000;
+
 }
 
 .today {
@@ -125,6 +126,9 @@ textarea:active {
   max-height: 3.125rem; /* 50px */
   overflow: auto;
   color: #000000;
+  
+  scrollbar-width: thin;           
+  scrollbar-color: #000000ff rgb(95, 125, 107);
 }
 
 .note-popup {

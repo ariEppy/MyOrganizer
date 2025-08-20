@@ -4,13 +4,30 @@ import './Calendar.css';
 
 
 const Calendar = () => {
-  const today = new Date();
+  //const today = new Date();
   const [currentDate, setCurrentDate] = useState(new Date());
   const [notes, setNotes] = useState({});
   const [selectedDate, setSelectedDate] = useState(null);
   const [noteInput, setNoteInput] = useState('');
   const [loaded, setLoaded] = useState(false); 
+  const [today, setToday] = useState(new Date());
 
+  // Function to update the "today" blue box
+  useEffect(() => {
+  const updateToday = () => setToday(new Date());
+
+  const now = new Date();
+  const msUntilMidnight =
+    new Date(now.getFullYear(), now.getMonth(), now.getDate() + 1).getTime() - now.getTime();
+
+  const timeoutId = setTimeout(() => {
+    updateToday();
+    setInterval(updateToday, 24 * 60 * 60 * 1000);
+  }, msUntilMidnight);
+
+
+  return () => clearTimeout(timeoutId);
+}, []);
 
   // Save my notes to the localStorage when notes/currentdate/loaded changes/page starts/renders
   useEffect(() => {
@@ -37,6 +54,8 @@ useEffect(() => {
       }
     }
     setLoaded(true);
+
+   
   }, []);
   
   //when the user clicks on a day
